@@ -10,10 +10,8 @@ def generate_id():
       data = json.load(json_file)
     user_data = data["user_input"]
     list_of_id = []
-    print(len(user_data))
     for i in range(len(user_data)):
       list_of_id.append(user_data[i]["user_id"])
-    print(list_of_id)
     return max(list_of_id)+1
   else:
     return randint(100, 1000)

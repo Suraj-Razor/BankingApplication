@@ -1,10 +1,10 @@
 def get_input():
-  f_name = input("What is your First Name:\n")
-  l_name = input("What is your Last Name:\n")
-  dob = input("Enter you Date of birth in dd/mm/yyyy:\n")
-  occupation = input("Enter your occupation:\n")
-  address = input("Enter your full residential address:\n")
-  email = input("Enter your Email:\n")
+  f_name = input("\nWhat is your First Name:\n")
+  l_name = input("\nWhat is your Last Name:\n")
+  dob = input("\nEnter you Date of birth in dd/mm/yyyy:\n")
+  occupation = input("\nEnter your occupation:\n")
+  address = input("\nEnter your full residential address:\n")
+  email = input("\nEnter your Email:\n")
   data = {"First Name": f_name,
           "Last Name":l_name,
           "Date of Birth":dob,
