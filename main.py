@@ -31,7 +31,7 @@ while bank_login:
       user_transaction = input("What would you like to do today?\n Type 1 to Deposit \n Type 2 to Withdraw \n Type 3 to Edit Personal Details \n or Type 4 to Logout")
       if user_transaction == "1":
         deposit(user_id)
-      elif user_transaction == 2:
+      elif user_transaction == "2":
         withdraw(user_id)
   elif user_input == "2":
     create_new_user()

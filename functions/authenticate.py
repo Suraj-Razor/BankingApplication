@@ -6,17 +6,18 @@ def user_authentication():
   user_data = get_user_data(user_id)
   if user_data[0]:
     enter_password = True
-    try_pass = 1
+    try_pass = 0
     while enter_password:
       pin = input("Please provide your pin: ")
       if str(user_data[1]["access_pin"]) == pin:
         print(f"Welcome, {user_data[1]['first_name']} {user_data[1]['last_name']}. You have been sucessfully authenticated")
         return [True, user_id]
-      elif try_pass <3:
+      elif try_pass <2:
         print("Wrong Password, try again")
         try_pass += 1
       else:
-        return print("Sorry, we can't authenticate you this time. Try a few mins later.")
+        print("Sorry, we can't authenticate you this time. Try a few mins later.")
+        return [False]
   else:
     print("User not found")
     return [False]
