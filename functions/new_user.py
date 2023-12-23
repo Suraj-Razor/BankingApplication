@@ -11,6 +11,7 @@ class NewUser():
     self.full_home_address = full_home_address
     self.email = email
     self.access_pin = access_pin
+    self.balance = 0
     new_user_data = {
       "user_id": self.user_id,
       "first_name": self.first_name,
@@ -19,18 +20,18 @@ class NewUser():
       "occupation": self.occupation,
       "home_address": self.full_home_address,
       "email": self.email,
-      "access_pin": self.access_pin
+      "access_pin": self.access_pin,
+      "balance": self.balance
     }
 
     try:
       with open("./data/user_data.json", "r") as json_file:
         data = json.load(json_file)
-        data["user_input"].append(new_user_data)
+        data["user_data"].append(new_user_data)
       with open("./data/user_data.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
         
     except:
-      os.mkdir("./data")
       with open("./data/user_data.json", "w") as json_file:
-        data = {"user_input":[new_user_data]}
+        data = {"user_data":[new_user_data]}
         json.dump(data, json_file, indent=4)
