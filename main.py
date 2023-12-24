@@ -1,43 +1,49 @@
-import pandas as pd
-from prettytable import PrettyTable
+from functions.new_user import NewUser
+from functions.new_user_creation import get_input
+from functions.user_authentication import user_authentication
+from functions.transactions import deposit, withdraw
+from functions.new_user_creation import get_input
+from functions.get_user_data import get_user_data
+from functions.update_user import user_update
+from functions.display_report import display_transactions
+import json
+from random import randint
 
-df = pd.read_csv("./data/transaction_data.csv")
 
-def display_transactions(user_id, display_type):
-    table = PrettyTable()
-    if display_type == "withdraw":
-        filter_condition = (df["user_id"] == user_id) & (df["transaction_type"] == "withdraw")
-        table.field_names = ["Transaction Type", "Transaction Date", "Transaction Amount"]
-    elif display_type == "deposit":
-        filter_condition = (df["user_id"] == user_id) & (df["transaction_type"] == "deposit")
-        table.field_names = ["Transaction Type", "Transaction Date", "Transaction Amount"]
-    else:
-        filter_condition = (df["user_id"] == user_id)
-        table.field_names = ["Transaction Type", "Transaction Date", "Transaction Amount", "Balance"]
+bank_login = True
+bank_services = False
 
-    filtered_transactions = df.loc[filter_condition, ["transaction_type", "transaction_date", "transaction_amount"]]
-    balance = 0
-    has_transactions = False
-
-    for index, row in filtered_transactions.iterrows():
-        has_transactions = True
-        if row["transaction_type"] == "deposit":
-            transaction_amount = f"{row['transaction_amount']}"
-            balance += row["transaction_amount"]
-        elif row["transaction_type"] == "withdraw":
-            transaction_amount = f"({row['transaction_amount']})"
-            balance -= row["transaction_amount"]
+while bank_login:
+  print("\nWelcome to PyBank Solutions\n")
+  print("Type 1 to login \nOR\nType 2 and we'll get you up and running in no time\n")
+  user_input = input("")
+  if user_input == "1":
+    authentication = user_authentication()
+    if authentication[0]:
+      authenticated = True
+      while authenticated:
+        user_id = authentication[1]
+        user_data = get_user_data(user_id)
+        print(f"\nHi {user_data[1]['first_name']} {user_data[1]['last_name']}")
+        print(f"Your Account Balance: ${user_data[1]['balance']}")
+        user_transaction = input("\nWhat would you like to do today?\n Type 1 to Deposit \n Type 2 to Withdraw \n Type 3 to Edit Personal Details \n Type 4 to View Transactions \n or Type 5 to Logout\n")
+        if user_transaction == "1":
+          deposit(user_id)
+        elif user_transaction == "2":
+          withdraw(user_id)
+        elif user_transaction == "3":
+          user_update(user_id)
+        elif user_transaction == "4":
+          user_selection = input("\n Type 1 to View All Transactions \n Type 2 to view All Deposits \n Type 3 to view All Withdrawls \n Or Type 4 to go back to previous menu: ")
+          if user_selection == "1":
+            display_transactions(int(user_id),"all")
+          elif user_selection == "2":
+            display_transactions(int(user_id),"deposit")
+          elif user_selection == "3":
+            display_transactions(int(user_id),"withdraw")
+          else:
+            ("Going back to previous menu")
         else:
-            transaction_amount = row["transaction_amount"]
-
-        if display_type == "all":
-            balance_str = f"{balance}" if balance >= 0 else f"({-balance})"
-            table.add_row([row["transaction_type"], row["transaction_date"], transaction_amount, balance_str])
-        else:
-            table.add_row([row["transaction_type"], row["transaction_date"], transaction_amount])
-
-    if not has_transactions:
-        print("No transactions recorded.")
-
-    if has_transactions:
-        print(table)
+          break
+  elif user_input == "2":
+    get_input()

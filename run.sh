@@ -3,10 +3,9 @@
 if command -v python &>/dev/null; then
     python -m venv .venv
     source .venv/bin/activate
-    pip3 install colored
-    pip3 install pandas
+    pip install colored pandas prettytable
     ./setup.sh
-    python main.py
+    python main.py  
 else
-    echo "Python is not detected, please install python and try again."
+    echo "Python is not detected, please install Python and try again."
 fi

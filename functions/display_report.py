@@ -17,8 +17,10 @@ def display_transactions(user_id, display_type):
 
     filtered_transactions = df.loc[filter_condition, ["transaction_type", "transaction_date", "transaction_amount"]]
     balance = 0
+    has_transactions = False
 
     for index, row in filtered_transactions.iterrows():
+        has_transactions = True
         if row["transaction_type"] == "deposit":
             transaction_amount = f"{row['transaction_amount']}"
             balance += row["transaction_amount"]
@@ -34,4 +36,8 @@ def display_transactions(user_id, display_type):
         else:
             table.add_row([row["transaction_type"], row["transaction_date"], transaction_amount])
 
-    print(table)
+    if not has_transactions:
+        print("No transactions recorded.")
+
+    if has_transactions:
+        print(table)
