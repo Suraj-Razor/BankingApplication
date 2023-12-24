@@ -1,5 +1,4 @@
 import json
-import os
 
 class NewUser():
   def __init__(self, id, first_name, last_name, dob, occupation, full_home_address, email, access_pin):
@@ -24,14 +23,10 @@ class NewUser():
       "balance": self.balance
     }
 
-    try:
-      with open("./data/user_data.json", "r") as json_file:
-        data = json.load(json_file)
-        data["user_data"].append(new_user_data)
-      with open("./data/user_data.json", "w") as json_file:
-        json.dump(data, json_file, indent=4)
-        
-    except:
-      with open("./data/user_data.json", "w") as json_file:
-        data = {"user_data":[new_user_data]}
-        json.dump(data, json_file, indent=4)
+    with open("./data/user_data.json", "r") as json_file:
+      data = json.load(json_file)
+      data["user_data"].append(new_user_data)
+    with open("./data/user_data.json", "w") as json_file:
+      json.dump(data, json_file, indent=4)
+
+      

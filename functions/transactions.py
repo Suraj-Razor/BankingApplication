@@ -21,7 +21,7 @@ def update_balance(user_id, new_balance):
 def deposit(user_id):
   user_data = get_user_data(user_id)
   balance = user_data[1]['balance']
-  deposit = int(input("How much would you like to deposit?"))
+  deposit = int(input("\nHow much would you like to deposit?"))
   new_data = [user_id,date.today(),"deposit",deposit]
   record_transaction(new_data)
   new_balance = balance + deposit
@@ -42,4 +42,8 @@ def withdraw(user_id):
       print("Thank you, your transaction has been successful")
     else:
       print("Sorry, you don't have sufficent fund")
+  else:
+    print(f"Sorry your account balance is ${user_data[1]['balance']}, you can't withdraw.")
   
+def transfer(user_id):
+  transfer_id = input("\nPlease enter the user ID where would you like to transfer funds to: ?")

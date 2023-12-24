@@ -10,7 +10,7 @@ def user_authentication():
     while enter_password:
       pin = input("Please provide your pin: ")
       if str(user_data[1]["access_pin"]) == pin:
-        print(f"Welcome, {user_data[1]['first_name']} {user_data[1]['last_name']}. You have been sucessfully authenticated")
+        print(f"\nYou have been sucessfully authenticated")
         return [True, user_id]
       elif try_pass <2:
         print("Wrong Password, try again")
