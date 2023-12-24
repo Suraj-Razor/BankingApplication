@@ -10,7 +10,8 @@ This application strictly adheres to the PEP 8 style guide for Python code.
 
 Reference:
 PEP 8 -- Style Guide for Python Code
-URL: https://www.python.org/dev/peps/pep-0008/
+
+[StyleGuide Reference](https://www.python.org/dev/peps/pep-0008/)
 
 # Application Features
 
