@@ -4,7 +4,6 @@ from datetime import date
 
 from functions.get_user_data import get_user_data
 
-
 def record_transaction(data):
     with open("./data/transaction_data.csv", "a", newline="\n") as csvdata:
         writer = csv.writer(csvdata)

@@ -48,7 +48,7 @@ while bank_login:
                             break
                         elif user_transaction >= 6:
                             print("Sorry invalid entry")
-                    except:
+                    except ValueError:
                         print("Sorry only numbers are accepted")
         elif user_input == 2:
             get_input()
@@ -56,5 +56,5 @@ while bank_login:
             break
         elif user_transaction >= 4:
             print("Sorry invalid entry")
-    except:
+    except ValueError:
         print("Sorry only numbers are accepted")
