@@ -1,10 +1,10 @@
 import pandas as pd
 from prettytable import PrettyTable
 
-df = pd.read_csv("./data/transaction_data.csv")
 
 
 def display_transactions(user_id, display_type):
+    df = pd.read_csv("./data/transaction_data.csv")
     table = PrettyTable()
     if display_type == "withdraw":
         filter_condition = (df["user_id"] == user_id) & (df["transaction_type"] == "withdraw")
