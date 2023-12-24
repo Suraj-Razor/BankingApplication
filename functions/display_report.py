@@ -2,7 +2,6 @@ import pandas as pd
 from prettytable import PrettyTable
 
 
-
 def display_transactions(user_id, display_type):
     df = pd.read_csv("./data/transaction_data.csv")
     table = PrettyTable()
