@@ -8,6 +8,6 @@ else
     touch transaction_data.csv
     touch user_data.json
     cd ..
-    python functions/setup_database.py
+    python utils/setup_database.py
 fi
 
