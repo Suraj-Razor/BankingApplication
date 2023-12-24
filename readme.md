@@ -1,4 +1,8 @@
-# Git Repository
+# Source Control Repository
+
+Below is the link to the Github Repo:
+
+## [Bank Application](https://github.com/Suraj-Razor/BankingApplication)
 
 # Code Style Guide
 
@@ -9,14 +13,6 @@ PEP 8 -- Style Guide for Python Code
 URL: https://www.python.org/dev/peps/pep-0008/
 
 # Application Features
-
-- NewUser Class Definition:
-
-  - Initializes a NewUser class to create user instances with specific attributes.
-  - Attributes include user details like ID, name, date of birth, occupation, address, email, access pin, and balance.
-  - Stores user data in a JSON file (user_data.json) by appending the new user data to the existing JSON data.
-
-# Functions:
 
 ## User Management
 
@@ -80,9 +76,9 @@ URL: https://www.python.org/dev/peps/pep-0008/
   - Saving Changes:
     - Once all changes are made, it saves the modified data back to the user_data.json file in a formatted (indented) manner.
 
-## Project Management
+# Project Management / Development Plan
 
-link - https://trello.com/b/SWja4YUF/banking-application
+### [Trello Board](https://trello.com/b/SWja4YUF/banking-application)
 
 ### Project Kanban
 
@@ -104,11 +100,9 @@ link - https://trello.com/b/SWja4YUF/banking-application
 
 ![Cancelled](./images/Task_4_Cancelled.png)
 
-## Help Documentation
+# Help Documentation
 
-### Requirements
-
-# Banking Application Installation
+### Banking Application Installation
 
 Step 1: Clone the Repository
 Open your terminal and run the following command:
@@ -142,13 +136,13 @@ The provided run.sh script automates the setup process:
 ./run.sh
 ```
 
-## Requirements:
+### Requirements:
 
 - Python 3.8 and Above
 
 - The run.sh script automates the setup process by creating a Python virtual environment, installing dependencies listed in requirements.txt, executing setup (if applicable), and launching the application.
 
-## Dependencies
+### Dependencies
 
 The requirements.txt file contains the following dependencies:
 
@@ -170,13 +164,13 @@ wcwidth==0.2.12
 
 These dependencies cover a range of functionalities such as data manipulation, testing, date and time handling, terminal formatting, and more.
 
-## System Requirements
+### System Requirements
 
 - Operating System: Compatible with Linux, macOS, and Windows.
 - Python Version: Minimum Python 3.8 or higher.
 - Hardware: No specific hardware requirements.
 
-## Usage
+### Usage
 
 Command Line Arguments: The Banking Application utilizes command line arguments.
 
@@ -188,7 +182,7 @@ python main.py
 
 # Test Cases for Banking Application
 
-## Test Case 1: New User Creation Test
+### Test Case 1: New User Creation Test
 
 Description: Test the functionality for creating new users within the system.
 
@@ -202,7 +196,7 @@ Expected Result:
 
 - The information of the test users (addinguser_test1 and addinguser_test2) should match the corresponding information retrieved from the stored JSON file.
 
-## Test Case 2: Deposit Functionality Test
+### Test Case 2: Deposit Functionality Test
 
 Description: Test the deposit functionality by adding funds to a user's account.
 
@@ -215,7 +209,7 @@ Expected Result:
 
 - The user's balance after the deposit should match the expected deposited amount (e.g., 100).
 
-## Test Case 3: Withdrawal Functionality Test
+### Test Case 3: Withdrawal Functionality Test
 
 Description: Test the withdrawal functionality by deducting funds from a user's account.
 
