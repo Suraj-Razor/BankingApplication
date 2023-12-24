@@ -2,7 +2,6 @@ from datetime import date
 from functions.get_user_data import get_user_data
 import csv
 import json
-from pprint import pprint
 
 def record_transaction(data):
   with open("./data/transaction_data.csv", "a", newline="\n") as csvdata:
@@ -44,6 +43,4 @@ def withdraw(user_id):
       print("Sorry, you don't have sufficent fund")
   else:
     print(f"Sorry your account balance is ${user_data[1]['balance']}, you can't withdraw.")
-  
-def transfer(user_id):
-  transfer_id = input("\nPlease enter the user ID where would you like to transfer funds to: ?")
+

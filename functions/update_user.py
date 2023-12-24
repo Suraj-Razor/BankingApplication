@@ -12,8 +12,8 @@ def user_update(user_id):
             if edit_field.lower() == "yes":
               print(f"\nYou are trying to edit {field}\nCurrent {field}: {user[field]}")
               new_value = input(f"Enter new {field}: ")
-              while len(new_value) <= 0:
-                new_value = input(f"Sorry {field} cannot be blank, please enter the new value or enter 'cancel' to skip")
+              while len(new_value) <= 0 or new_value.isspace():
+                new_value = input(f"Sorry {field} cannot be blank, please enter the new value or enter 'cancel' to skip: ")
               if new_value.lower() == "cancel":
                 print(f"{field} Skipped from editing")
               else:

@@ -3,7 +3,7 @@
 if command -v python &>/dev/null; then
     python -m venv .venv
     source .venv/bin/activate
-    pip install colored pandas prettytable
+    pip install pandas prettytable
     ./setup.sh
     python main.py  
 else

@@ -1,5 +1,4 @@
 import json
-from pprint import pprint
 
 def get_user_data(user_id):
   
