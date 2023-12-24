@@ -46,7 +46,7 @@ def get_input():
     while not all_data_correct:
         all_data_correct = True
         for field in data:
-            if len(data[field]) == 0:
+            if len(data[field]) == 0 or data[field].isspace():
                 data[field] = input(f"Sorry {field} cannot be blank, please provide a value: ")
                 all_data_correct = False
     print("\nThank you for providing the details\nPlease set an access pin code, which you will require to access your account")
