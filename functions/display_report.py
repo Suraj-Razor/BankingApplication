@@ -3,6 +3,7 @@ from prettytable import PrettyTable
 
 df = pd.read_csv("./data/transaction_data.csv")
 
+
 def display_transactions(user_id, display_type):
     table = PrettyTable()
     if display_type == "withdraw":
