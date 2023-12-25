@@ -4,6 +4,10 @@ Below is the link to the Github Repo:
 
 ## [Bank Application](https://github.com/Suraj-Razor/BankingApplication)
 
+# Video Presentation
+
+## [T1A3 Preso Link](https://youtu.be/yer_EHZMSQM)
+
 # Code Style Guide
 
 This application strictly adheres to the PEP 8 style guide for Python code.
