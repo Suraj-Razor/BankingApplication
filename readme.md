@@ -1,22 +1,3 @@
-# Source Control Repository
-
-Below is the link to the Github Repo:
-
-## [Bank Application](https://github.com/Suraj-Razor/BankingApplication)
-
-# Video Presentation
-
-## [T1A3 Preso Link](https://youtu.be/yer_EHZMSQM)
-
-# Code Style Guide
-
-This application strictly adheres to the PEP 8 style guide for Python code.
-
-Reference:
-PEP 8 -- Style Guide for Python Code
-
-[StyleGuide Reference](https://www.python.org/dev/peps/pep-0008/)
-
 # Application Features
 
 ## User Management
@@ -80,6 +61,26 @@ PEP 8 -- Style Guide for Python Code
     - After editing, it displays the updated user details for confirmation.
   - Saving Changes:
     - Once all changes are made, it saves the modified data back to the user_data.json file in a formatted (indented) manner.
+
+# Source Control Repository
+
+Below is the link to the Github Repo:
+
+## [Bank Application](https://github.com/Suraj-Razor/BankingApplication)
+
+# Video Presentation
+
+## [T1A3 Preso Link](https://youtu.be/yer_EHZMSQM)
+
+# Code Style Guide
+
+This application strictly adheres to the PEP 8 style guide for Python code.
+
+Reference:
+PEP 8 -- Style Guide for Python Code
+
+[StyleGuide Reference](https://www.python.org/dev/peps/pep-0008/)
+
 
 # Project Management / Development Plan
 
